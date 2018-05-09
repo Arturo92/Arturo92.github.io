@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Arturo92</title>
+    <link href="./Styles/index.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script src="./Script/index.js"></script>
+      <div id="container-nav">
+      <nav id="nav-menu">
+        <ul id="nav-bar">
+        <li><a href="index.html" id="home-link">Home</a></li>
+          <li><a href="about.html" id="about-link">About</a></li>
+          <li>  <a href="resume.html" id="resume-link">Resume</a></li>
+        </ul>
+      </nav>
+      </div>
+      <div id="content">
+        <article id="content-child">
+          <h3 style="display:none;">Hello,</h3><p id="paragraph"
+          style="display:none;"> my name is</p> <h1 style="display:none;">Arthur Hernandez</h1>
+          <p>I am a true software engineer. I develop maintain and release software. My work speaks for itself.</p>
+        </article>
+      </div>
+      <div id="links">
+        <a onclick="opengithub()">GitHub</a>
+          <a href="https://www.linkedin.com/in/arturo-hernandez-ba929b124/">LinkedIn</a>
+      </div>
+  <div id="container">
+    <p style="display:none;">
+      My skills are highly advanced and can code algorithms that solve many problems at once.
+    </p>
+  </div>
+  <footer>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+   <li><a id="copy-right">All content copyright &copy; Arthur Hernandez</a>
+   </li>
+   </ul>
+  </footer>
+  <script type="text/javascript">
+    function opengithub(){
+      window.open("");
+    }
+  </script>
+  <script>
+    $(document).ready (function(){
+       $("#content-child h3").fadeIn (3000);
+       $("#content-child p").fadeIn (3000);
+       $("#content-child h1").fadeIn (3000);
+    
+    });
+    $(window).on ("scroll", function (){
+       if ($(window).scrollTop() > 80){
+         $("#container p").fadeIn (3000);
+       }
+    });
+  </script>
+  </body>
+</html>
