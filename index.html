@@ -1,65 +1,116 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Arturo92</title>
-    <link href="./Styles/index.css" rel="stylesheet" type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <script src="./Script/index.js"></script>
-      <div id="container-nav">
-      <nav id="nav-menu">
-        <ul id="nav-bar">
-        <li><a href="index.html" id="home-link">Home</a></li>
-          <li><a href="about.html" id="about-link">About</a></li>
-          <li>  <a href="resume.html" id="resume-link">Resume</a></li>
-        </ul>
-      </nav>
-      </div>
-      <div id="content">
-        <article id="content-child">
-          <h3 style="display:none;">Hello,</h3><p id="paragraph"
-          style="display:none;"> my name is</p> <h1 style="display:none;">Arturo Hernandez</h1>
-          <p>I am a true software engineer. I develop maintain and release software. My work speaks for itself.</p>
-        </article>
-      </div>
-      <div id="links">
-        <a onclick="opengithub()">GitHub</a>
-          <a href="https://www.linkedin.com/in/arturo-hernandez-ba929b124/">LinkedIn</a>
-      </div>
-  <div id="container">
-    <p style="display:none;">
-      My skills are highly advanced and can code algorithms that solve many problems at once.
-    </p>
-  </div>
-  <footer>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-   <li><a id="copy-right">All content copyright &copy; Arthur Hernandez</a>
-   </li>
-   </ul>
-  </footer>
-  <script type="text/javascript">
-    function opengithub(){
-      window.open("https://github.com/Arturo92");
-    }
-  </script>
-  <script>
-    $(document).ready (function(){
-       $("#content-child h3").fadeIn (3000);
-       $("#content-child p").fadeIn (3000);
-       $("#content-child h1").fadeIn (3000);
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>Arthur Ernesto Hernandez | Portfolio</title>
+  <meta name="author" content="Arthur Ernesto Hernandez">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <img id="menu" src="img/menu.png">
+    <h1 id="name" >Arturo Ernesto Hernandez</h1>
+    <h2 class="desc">Web Developer / Web Designer</h2>
+	<div id="scrolltext">
+	scroll down
+	</div>
+    <script>
+	    $(document).ready(function(){
+		    $('body').show(function(){
+			    $('#wrapper').slideDown("linear");
+				$('h2').slideDown(1200);
+			});
+			
+			$('#menu').click(function(){
+			    
+			    $('#overlaymenu').slideDown(400);
+				$('#wrapper').slideUp(100);
+				$('#exit').slideDown();
+				$('body').css('background-color','pink');
+				$('.menu-links').show();
+			});
+			
+			$('#exit').click(function(){
+			    $('body').css('background-color','transparent');
+			    $('#overlaymenu').slideUp();
+				$('#wrapper').slideDown(2500);
+				$(this).hide();
+				$('.menu-links').hide();
+			});
+		});
+	</script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id="wrapper2">
+	<div style="width:100%; background-color:purple; height:500px;">
+    <div class="animateblock left">
+	  <div class="animateblock left">
+	      <h1 class="websitenames">Fashion Boutique</h1>
+		  <h5 class="websitetitles">E-commerce website | 2019</h5>
+	  </div>
+      <img id="img" style="padding-bottom:2%;" width="1000px" src="img/example.png">
+    </div>
+	</div>
+	
+	<div style="width:100%; background-color:yellow; height:500px; margin-top:18%;">
+	<div class="animateblock left">
+	  <div class="animateblock left">
+	      <h1 class="websitenames">Saint Laurent</h1>
+		  <h5 class="websitetitles">E-commerce website | 2019</h5>
+	  </div>
+      <img id="img" style="padding-bottom:2%;" width="1000px" src="img/example3.png">
+    </div>
+	</div>
+    <br><br><br><br>
+	
+	
+    <br><br><br><br>
     
+    <br><br><br><br>
+	
+	
+    <br><br><br><br>
+  </div>
+  </div>
+  <div id="overlaymenu">
+      <img id="exit" src="img/menu.png">
+	  <div id="links-holder">
+	      <a class="menu-links" href="index.html">Home</a>
+		  <a class="menu-links" href="about.html">About</a>
+		  <a class="menu-links" href="contact.html">Contact</a>
+	  </div>
+  </div>
+<script type="text/javascript">
+
+$(function(){
+  var $elems = $('.animateblock');
+  var winheight = $(window).height();
+  var fullheight = $(document).height();
+  
+  $(window).scroll(function(){
+    animate_elems();
+  });
+  
+  function animate_elems() {
+    wintop = $(window).scrollTop(); // calculate distance from top of window
+ 
+    // loop through each item to check when it animates
+    $elems.each(function(){
+      $elm = $(this);
+      
+      if($elm.hasClass('animated')) { return true; } // if already animated skip to the next item
+      
+      topcoords = $elm.offset().top; // element's distance from top of page in pixels
+      
+      if(wintop > (topcoords - (winheight*.75))) {
+        // animate when top of the window is 3/4 above the element
+        $elm.addClass('animated');
+      }
     });
-    $(window).on ("scroll", function (){
-       if ($(window).scrollTop() > 80){
-         $("#container p").fadeIn (3000);
-       }
-    });
-  </script>
-  </body>
+  } // end animate_elems()
+});
+</script>
+</body>
 </html>
